@@ -5,22 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Appointment.destroy_all
+# Doctor.destroy_all
+# Patient.destroy_all
+
+doc1 = Doctor.create(name: "Ana Jimmy", specialty: "Psychology")
+patient1 = Patient.create(name: "Maria", age: "30 years old")
 
 Appointment.create(
   [{
     date: "July 1st",
-    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly."
+    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
+    doctor_id: 1,
+    patient_id: 1,
     },
     {
     date: "July 2nd",
-    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly."
+    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
+    doctor_id: 1,
+    patient_id: 1,
   },
   {
     date: "July 21st",
-    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly."
+    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
+    doctor_id: 1,
+    patient_id: 1,
     },
     {
     date: "July 22nd",
-    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly."
+    notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
+    doctor_id: 1,
+    patient_id: 1,
   },]
   )
