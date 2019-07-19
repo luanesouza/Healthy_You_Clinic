@@ -1,5 +1,6 @@
 <h1> Healthy You Clinic </h1>
 
 <% @appointments.each do |appointment| %>
-  <%= @appointment.time  %>
+  <p><%= appointment.date %></p>
+  <p><%= appointment.notes  %></p>
 <% end %>
