@@ -1,0 +1,5 @@
+<select name="doctor[doctor_id]">
+    <% doctor.all.each do |doctor| %>
+        <option value="<%= doctor.id %>"><%= doctor.name_with_initial %></option>
+    <% end %>
+</select>
