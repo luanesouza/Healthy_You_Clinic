@@ -1,11 +1,2 @@
-<%= form_for @appointment do |f|%>
-  <p>
-    <%= f.text_field :date, placeholder: "Date" %>
-  </p>
-  <%= f.collection_select :doctor_id, @doctors, :id, :name %>
-  <%= f.collection_select :patient_id, @patients, :id, :name %>
-  <p>
-    <%= f.text_area :notes, placeholder: "Notes" %>
-  </p>
-  <%= f.button "Schedule Appointment", type: :submit %>
-<% end %>
+
+  <%= render partial: 'form', appointment: @appointment %>
