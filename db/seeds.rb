@@ -11,34 +11,34 @@ Patient.destroy_all
 
 doc1 = Doctor.create(name: "Ana Jimmy", specialty: "Psychology")
 patient1 = Patient.create(name: "Maria", age: "30 years old")
-patient1 = Patient.create(name: "Ana", age: "35 years old")
-patient1 = Patient.create(name: "John", age: "20 years old")
-patient1 = Patient.create(name: "Rita", age: "25 years old")
-patient1 = Patient.create(name: "Lily", age: "10 years old")
+patient2 = Patient.create(name: "Ana", age: "35 years old")
+patient2 = Patient.create(name: "John", age: "20 years old")
+patient2 = Patient.create(name: "Rita", age: "25 years old")
+patient2 = Patient.create(name: "Lily", age: "10 years old")
 
 Appointment.create(
   [{
     date: "July 1st",
     notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
-    doctor_id: 1,
-    patient_id: 1,
+    doctor_id: doc1.id,
+    patient_id: patient1.id,
     },
     {
     date: "July 2nd",
     notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
-    doctor_id: 1,
-    patient_id: 1,
+    doctor_id: doc1.id,
+    patient_id: patient1.id,
   },
   {
     date: "July 21st",
     notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
-    doctor_id: 1,
-    patient_id: 1,
+    doctor_id: doc1.id,
+    patient_id: patient1.id,
     },
     {
     date: "July 22nd",
     notes: "I reversed the polarity of the neutron flow. I've reversed the polarity of the Neutron flow, so the TARDIS should be free from the force field now. Death is always more frightening when it strikes invisibly.",
-    doctor_id: 1,
-    patient_id: 1,
+    doctor_id: doc1.id,
+    patient_id: patient1.id,
   },]
   )
