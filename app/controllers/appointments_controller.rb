@@ -16,12 +16,12 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.create(appointments_params)
+    @appointment = Appointment.create(appointment_params)
     redirect_to appointments_path
   end
 
   private
-  def appointments_params
+  def appointment_params
     params.require(:appointment).permit(
       :date,
       :patient_id,

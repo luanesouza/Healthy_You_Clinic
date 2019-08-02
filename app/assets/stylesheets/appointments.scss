@@ -1,3 +1,26 @@
 // Place all the styles related to the Appointments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+nav {
+  background-color: grey;
+  height: 8vh;
+  
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.appointment_info {
+  border: 1px dashed black;
+  margin: .5em;
+  padding: 6px;
+  width: 40vw;
+}
+
+
+a {
+  cursor: pointer;
+}
