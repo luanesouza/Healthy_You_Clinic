@@ -1,7 +1,9 @@
 
 <%= form_for @appointment do |f|%>
   <p>
-    <%= f.text_field :date, placeholder: "Date" %>
+    <%= f.text_field :date, id: 'datepicker', size:10 %>
+    <%= f.time_select :date, :ignore_date => false %>
+    <!-- # Added later. not shown in screenshot -->
   </p>
   <%= f.collection_select :doctor_id, @doctors, :id, :name %>
   <%= f.collection_select :patient_id, @patients, :id, :name %>

@@ -1,19 +1,36 @@
-<nav>
-  <span> Healthy You Clinic </span>
-  <%= link_to 'Schedule an Appointment', new_appointment_path %> |
-  <%= link_to 'Register New Patient', new_patient_path %> |
-  <%= link_to 'Register New Doctor', new_doctor_path %>
-</nav>
+<div class="appointment_container">
+  <nav>
+    <img src="https://i.imgur.com/SRNrBvN.png" alt="logo_img" id="logo_img">
+    <a href=" <%= new_appointment_path %> ">
+      <img id="nav_img" src="https://www.fmsfranchise.com/wp-content/uploads/2018/01/icon-strategicplanning-green.png" alt="">
+    </a>
+    <%= link_to 'Register New Patient', new_patient_path %> |
+    <%= link_to 'Register New Doctor', new_doctor_path %>
+  </nav>
 
-<section>
-  <% @appointments.each do |appointment| %>
-  <a>
-  <div class="appointment_info">
-    <p>Date: <%= appointment.date %></p>
-    <p>Notes: <% appointment.notes  %></p>
-    <%= link_to 'See More', appointment %>
-  </div>
-  </a>
+  <form action="/appointments" method="get" class="search_boxes">
+    <input id="search_input" placeholder="Search by Date 🔍" type="text" name="search">
+  </form>
 
-  <% end %>
-</section>
+  <section>
+    <% @appointments.each do |appointment| %>
+    <a>
+      <div class="appointment_content">
+        <div class="appointment_info">
+          <p>Date: <%= appointment.date %></p>
+          <p>Notes: <% appointment.notes  %></p>
+          <%= link_to 'See More', appointment %>
+        </div>
+        <div class="buttons">
+          <%= button_to 'Cancel Appointment', { action: 'destroy', id: appointment.id },
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+
+          <%= button_to 'Reschedule Appointment' %>
+          <%= button_to 'View Appointment Details' %>
+        </div>
+      </div>
+    </a>
+    <% end %>
+  </section>
+  <%= link_to "Back", appointments_path %>
+</div>

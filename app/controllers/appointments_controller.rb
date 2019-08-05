@@ -1,7 +1,12 @@
 class AppointmentsController < ApplicationController
 
   def index
-    @appointments = Appointment.all
+    if params[:search]
+      @appointments = Appointment.all.select {|app| app.date.include?(params[:search])}
+    else
+      @appointments = Appointment.all
+    end
+
   end
 
   def show
@@ -16,6 +21,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    byebug
     @appointment = Appointment.create(appointment_params)
     redirect_to appointments_path
   end
